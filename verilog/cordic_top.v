@@ -106,7 +106,7 @@ module cordic 	(input op_mode,
 						end
 					end
 					//output transfer
-					y_or_size_out <= {outx[15], outx[14:0]/`size_adj};
+					y_or_size_out <= {outx[15], divx};
 					x_or_phase_out <= outz;
 				end
 			end
