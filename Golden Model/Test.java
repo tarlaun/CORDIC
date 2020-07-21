@@ -1,14 +1,13 @@
 import java.io.BufferedWriter;
 import java.io.File; // Import the File class
-import java.io.FileNotFoundException; // Import this class to handle errors
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner; // Import the Scanner class to read text files
+
 
 public class Test {
 
-    static String neg = "111111111111111";
-    static String pos = "000000000000000";
+    static double pi =3.14159265359;
+    static double[] arcTan = {0.7854, 0.4636, 0.245, 0.1244, 0.0624, 0.0312, 0.0156, 0.0078, 0.0039, 0.002, 0.001 , 0.0005 , 0.0002 };
 
     public static void main(String[] args)  {
     try {
@@ -40,40 +39,43 @@ public class Test {
   }
 
   static String rotate(String x , String y , String theta){
-        float a = strToFloat(x);
-        float b = strToFloat(y);
-        float t = strToFloat(theta);
-        System.out.println(floatToStr(a));
-        System.out.println(floatToStr(b));
-        System.out.println(floatToStr(t));
-        return "";
+        double xc = strToDouble(x);
+        double yc = strToDouble(y);
+        double z = strToDouble(theta);
+        z = adjustTheta(z);
+        double cos = Math.cos(z);
+        double sin = Math.sin(z);
+        double resX = xc*cos + yc*sin;
+        double resY = -xc*sin + yc*cos;
+        String acs = doubleToStr(resX);
+        String bcs = doubleToStr(resY);
+
+        return acs + " " +  bcs + " x="+resX+ " y="+resY;
   }
 
   static String phaseDetector(String x , String y){
-        float a = strToFloat(x);
-        float b = strToFloat(y);
-        System.out.println(floatToStr(a));
-        System.out.println(floatToStr(b));
-        
-        return "";
+        double xc = strToDouble(x);
+        double yc = strToDouble(y);
+        double z = Math.atan2(yc , xc);
+        String zs = doubleToStr(z);
+        return zs + " theta="+z;
   }
 
-  static float strToFloat(String x){
+  static double strToDouble(String x){
         String sign = x.charAt(0) == '1'? "-" : "";
         if(sign.equals("-"))
             x = twoSComp(x.substring(1));
         else
             x = x.substring(1);
         int intVal = Integer.parseInt(sign+x,2);
-        float res = intVal;
+        double res = intVal;
         for (int i = 0; i < 8; i++) {
             res /= 2;
         }
         return res;
   }
 
-  static String floatToStr(float f){
-        StringBuilder stringBuilder = new StringBuilder();
+  static String doubleToStr(double f){
         for (int i = 0; i < 8; i++) {
             f *= 2;
         }
@@ -83,19 +85,6 @@ public class Test {
             string = "0" + string;
         }
         return string.substring(string.length()-16, string.length());
-        // boolean neg = intVal < 0;
-        // intVal = Math.abs(intVal);
-        // for (int i = 0; i < 15; i++) {
-        //     stringBuilder.append(intVal % 2 + "");
-        //     intVal /= 2;
-        // }
-        // if(neg){
-        //     stringBuilder.replace(0, stringBuilder.capacity()-1, twoSComp(stringBuilder.toString()));
-        //     stringBuilder.append("1");
-        // }else
-        //     stringBuilder.append("0");
-        // stringBuilder.reverse();
-        // return stringBuilder.toString();
   }
 
   static String twoSComp(String x){
@@ -117,5 +106,14 @@ public class Test {
       }
       stringBuilder.reverse();
       return stringBuilder.toString();
+  }
+
+  static double adjustTheta(double theta){
+    double sign = theta > 0 ? 1 : -1;
+    while(Math.abs(theta) > 2*pi){
+      theta -= sign * 2 * pi;
+      sign = theta > 0 ? 1 : -1;
+    }
+    return theta;
   }
 }
