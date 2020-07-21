@@ -50,7 +50,7 @@ public class Test {
         String acs = doubleToStr(resX);
         String bcs = doubleToStr(resY);
 
-        return acs + " " +  bcs + " x="+resX+ " y="+resY;
+        return acs + " " +  bcs + " x= "+resX+ " y= "+resY;
   }
 
   static String phaseDetector(String x , String y){
@@ -58,7 +58,9 @@ public class Test {
         double yc = strToDouble(y);
         double z = Math.atan2(yc , xc);
         String zs = doubleToStr(z);
-        return zs + " theta="+z;
+        double size = Math.sqrt(Math.pow(xc,2) + Math.pow(yc, 2));
+        String sizes = doubleToStr(size);
+        return zs + " " + sizes + " theta= "+z + " size= "+ size;
   }
 
   static double strToDouble(String x){

@@ -1,0 +1,28 @@
+C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v {1 {vlog -work work -vopt -stats=none C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v
+Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+-- Compiling module cordic_stage
+
+Top level modules:
+	cordic_stage
+
+} {} {}} C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v {1 {vlog -work work -vopt -stats=none C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v
+Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+-- Compiling module testbench2
+
+Top level modules:
+	testbench2
+
+} {} {}} C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v {2 {vlog -work work -vopt -stats=none C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v
+Model Technology ModelSim SE-64 vlog 10.5 Compiler 2016.02 Feb 13 2016
+-- Compiling module cordic
+** Warning: ** while parsing macro expansion: 'size_adj' starting at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(71)
+** at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: ** while parsing macro expansion: 'size_adj' starting at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(72)
+** at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(72): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: ** while parsing macro expansion: 'size_adj' starting at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(100)
+** at C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v(100): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	cordic
+
+} {} {}}

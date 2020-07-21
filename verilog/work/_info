@@ -1,0 +1,113 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/modeltech64_10.5/examples
+T_opt
+!s110 1595339667
+VMLYRl4Q=`mXbCfDgJlILk0
+04 9 4 work testbench fast 0
+=1-54e1adaf279e-5f16f393-329-1e3c
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.5;63
+T_opt1
+!s110 1595337212
+VCAAgSU2;eeD`JH6[ONDW22
+04 10 4 work testbench2 fast 0
+=1-54e1adaf279e-5f16e9fc-1fb-b14
+R1
+R2
+n@_opt1
+R3
+R0
+vcordic
+Z4 !s110 1595327018
+!i10b 1
+!s100 7oVN5nWTN<Hligj9PJd]`3
+IkaUXCShX:GBHWX2DKJlVR2
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dC:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog
+Z7 w1595257665
+8C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v
+FC:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v
+L0 1
+Z8 OL;L;10.5;63
+r1
+!s85 0
+31
+Z9 !s108 1595327018.000000
+!s107 C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_top.v|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vcordic_stage
+R4
+!i10b 1
+!s100 Y]M8L`zNMdQ=UA4PeT5nV2
+I97Nn_PUXfO6XSfm[kAPWA2
+R5
+R6
+R7
+8C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v
+FC:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/cordic_stage.v|
+!i113 0
+R10
+R2
+vtestbench
+!s110 1595339662
+!i10b 1
+!s100 kzZIMoib20VoFE`CW@B:90
+IW:1Ykh37KzH33K:W=RU;H1
+R5
+R6
+w1595339656
+8C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench.v
+FC:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1595339662.000000
+!s107 C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench.v|
+!i113 0
+R10
+R2
+vtestbench2
+!s110 1595337209
+!i10b 1
+!s100 <Z`?Nf=]i72GI@l<`zAPJ1
+I3EW1Sdi=fUHkUQ2gE`A?C1
+R5
+R6
+w1595337203
+8C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v
+FC:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1595337208.000000
+!s107 C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/CORDIC/CORDIC/verilog/testbench2.v|
+!i113 0
+R10
+R2
