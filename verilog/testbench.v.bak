@@ -1,3 +1,4 @@
+`define NULL 0 
 module testbench;
 
 
@@ -10,13 +11,7 @@ reg start = 0;
 reg clk = 1'b0;
    
 
-integer data_file;
-integer scan_file;
-integer data_file_mode;
-integer scan_file_mode;
-integer result_file;
-integer print_file;
-
+cordic c(mode , x, y , z , clk , reset , res1 , res2);
 
 initial
 begin
@@ -36,43 +31,16 @@ begin
 end
 
 
+ 
 initial begin
-data_file = $fopen("test_read.txt", "r");
-data_file_mode = $fopen("test_read_mode.txt" , "r");
-if (data_file == 0) 
-begin
-$display("data_file handle was NULL");
-$finish;
-end
-end
+	x <= 16'b0001_1010_0110_0000;
+	y <= 16'b0000_1110_0000_0000;
+	z <= 16'b0000_0010_0000_0000;
+	mode <= 1;
+
+end  
 
  
-always @( negedge clk or negedge reset)
-begin
- 	if(start)
-	begin
-		if(counter < 100)
-		begin
-		scan_file_mode = $fscanf(data_file_mode, "%b\n", mode);
-		scan_file = $fscanf(data_file , "%b\n" , cData);
-		x = cData;
-		scan_file = $fscanf(data_file , "%b\n" , cData);
-		y = cData;
-		if( mode === 0)
-		begin 
-			scan_file = $fscanf(data_file , "%b\n" , cData);
-			z = cData;
-		end
-		counter <= counter + 1;
-		end
-	end
-
-end
-
-
-
-initial 
-$monitor($time, " Output cData = %b",  cData); 
 
 
 endmodule
