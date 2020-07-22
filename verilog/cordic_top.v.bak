@@ -27,9 +27,17 @@ module cordic 	(input op_mode,
 		wire [15:0] outx;
 		wire [15:0] outy;
 		wire [15:0] outz;
+		wire [32:0] holderx;
+		wire [14:0] divx;
+		wire [14:0] divy;
+		wire [32:0] holdery;
 		assign outx = connections_x[7];
 		assign outy = connections_y[7];
 		assign outz = connections_z[7];
+		assign holderx = outx[14:0];
+		assign divx = (holderx << 8) / `size_adj;
+		assign holdery = outy[14:0];
+		assign divy = (holdery << 8) / `size_adj;
 		always @(posedge clock or negedge reset)
 		begin
 			if (~reset)
@@ -69,8 +77,8 @@ module cordic 	(input op_mode,
 						end
 					end
 					//output transfer
-					x_or_phase_out <= {outx[15], outx[14:0]/`size_adj};
-					y_or_size_out <= {outy[15], outy[14:0]/`size_adj};
+					x_or_phase_out <= {outx[15], divx};
+					y_or_size_out <= {outy[15], divy};
 				end
 				else
 				begin
@@ -83,7 +91,7 @@ module cordic 	(input op_mode,
 					end
 					else
 					begin
-						if (y_coordinate[15] == 1)
+						if (y_coordinate[15] == 0)
 						begin
 							x_in <= y_coordinate;
 							y_in <= {~x_coordinate[15],x_coordinate[14:0]};
@@ -98,7 +106,7 @@ module cordic 	(input op_mode,
 						end
 					end
 					//output transfer
-					y_or_size_out <= {outx[15], outx[14:0]/`size_adj};
+					y_or_size_out <= {outx[15], divx};
 					x_or_phase_out <= outz;
 				end
 			end

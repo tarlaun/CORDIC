@@ -15,10 +15,10 @@ module cordic_stage    	#( parameter stage)
 		`define PI 16'b0_0000011_00100100
 		`define PI15 15'b0000011_00100100
 		reg [15:0] atan;
-		//always @*
-		//begin
-		//	$display("x = %b \n xo = %b \n y = %b \n yo = %b \n z = %b \n zo = %b \n", x,x_out,y,y_out,z,z_out);
-		//end
+		always @*
+		begin
+			$display("x = %b \n xo = %b \n y = %b \n yo = %b \n z = %b \n zo = %b \n", x,x_out,y,y_out,z,z_out);
+		end
 		always @(posedge clock or negedge reset)
 		begin
 			if (~reset)

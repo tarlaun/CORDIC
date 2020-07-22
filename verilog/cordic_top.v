@@ -91,7 +91,7 @@ module cordic 	(input op_mode,
 					end
 					else
 					begin
-						if (y_coordinate[15] == 1)
+						if (y_coordinate[15] == 0)
 						begin
 							x_in <= y_coordinate;
 							y_in <= {~x_coordinate[15],x_coordinate[14:0]};
