@@ -18,7 +18,7 @@ public class Test {
       Scanner testScanner = new Scanner(testFile);
       Scanner modeScanner = new Scanner(modeFile);
       String x , y , theta , result;
-      for (int i = 0; i < 100; i++) {
+      for (int i = 0; i < 8; i++) {
           x = testScanner.nextLine();
           y = testScanner.nextLine();
           if(modeScanner.nextLine().equals("0")){
@@ -42,7 +42,7 @@ public class Test {
         double xc = strToDouble(x);
         double yc = strToDouble(y);
         double z = strToDouble(theta);
-        z = adjustTheta(z);
+        z = -adjustTheta(z);
         double cos = Math.cos(z);
         double sin = Math.sin(z);
         double resX = xc*cos + yc*sin;
@@ -64,13 +64,12 @@ public class Test {
   }
 
   static double strToDouble(String x){
-        String sign = x.charAt(0) == '1'? "-" : "";
-        if(sign.equals("-"))
-            x = twoSComp(x.substring(1));
-        else
-            x = x.substring(1);
-        int intVal = Integer.parseInt(sign+x,2);
+        boolean neg = x.charAt(0) == '1';
+        x = x.substring(1);
+        int intVal = Integer.parseInt(x,2);
         double res = intVal;
+        if(neg)
+          res *= -1;
         for (int i = 0; i < 8; i++) {
             res /= 2;
         }
@@ -81,34 +80,19 @@ public class Test {
         for (int i = 0; i < 8; i++) {
             f *= 2;
         }
-        int intVal = (int)f;
+        int intVal = (int)Math.abs(f);
         String string = Integer.toBinaryString(intVal);
-        while(string.length() < 16){
+        while(string.length() < 15){
             string = "0" + string;
         }
-        return string.substring(string.length()-16, string.length());
+        string = string.substring(string.length()-15);
+        if(f < 0)
+          string = "1" + string;
+        else
+          string = "0" + string;
+        return string;
   }
 
-  static String twoSComp(String x){
-      StringBuilder stringBuilder = new StringBuilder();
-      int index = x.length()-1;
-      while(index >= 0 && x.charAt(index) == '0'){
-        stringBuilder.append(x.charAt(index));
-        index--;  
-      }
-      if(index >= 0){
-        stringBuilder.append(x.charAt(index));
-         index--;
-     }
-
-      while(index >= 0){
-        char c = x.charAt(index) == '0' ? '1' : '0';
-        stringBuilder.append(c);
-        index--;
-      }
-      stringBuilder.reverse();
-      return stringBuilder.toString();
-  }
 
   static double adjustTheta(double theta){
     double sign = theta > 0 ? 1 : -1;

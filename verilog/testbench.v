@@ -1,4 +1,3 @@
-`define NULL 0 
 module testbench;
 
 
@@ -10,9 +9,6 @@ reg reset = 1;
 reg start = 0; 
 reg clk = 1'b0;
    
-
-cordic c(mode , x, y , z , clk , reset , res1 , res2);
-
 initial
 begin
       forever

@@ -66,7 +66,7 @@ end
 
 
 initial begin
-  #10000000
+  #200
   $fclose(fw);  
 end
 
