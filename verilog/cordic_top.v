@@ -102,7 +102,7 @@ module cordic 	(input op_mode,
 							
 							y_in <= x_coordinate;
 							x_in <= {~y_coordinate[15],y_coordinate[14:0]};
-							z_in <= 16'b1_0000011_0010010; //-PI/2
+							z_in <= 16'b1_0000001_10010010; //-PI/2
 						end
 					end
 					//output transfer
