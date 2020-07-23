@@ -9,3 +9,4 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # OpenFile C:/Users/Tarlan/Desktop/DSD/CORDIC/verilog/cordic_stage.v 
+# ** Error: (vish-42) Unsupported ModelSim library format for "C:/Users/Tarlan/Desktop/DSD/CORDIC/verilog/work". (Format: 4)
