@@ -24,6 +24,7 @@ module cordic 	(input op_mode,
 		wire [15:0] connections_y [7:0];
 		wire [15:0] connections_z [7:0];
 		wire connections_mode [7:0];
+		wire [2:0] connections_stage [7:0];
 		wire [15:0] outx;
 		wire [15:0] outy;
 		wire [15:0] outz;
@@ -111,22 +112,25 @@ module cordic 	(input op_mode,
 				end
 			end
 		end
-		
-		cordic_stage #(0) s0 (x_in, y_in, z_in, mode_in, reset, clock,
-				 connections_x[0], connections_y[0], connections_z[0], connections_mode[0]);
+		wire [2:0] gnd;
+		assign gnd = 0;
+		cordic_stage s0 (x_in, y_in, z_in, mode_in, reset, clock, gnd,
+				 connections_x[0], connections_y[0], connections_z[0], connections_mode[0], connections_stage[0]);
 		genvar i;
 		generate
 			for (i = 1; i < 8; i = i + 1) begin : stages
-				cordic_stage #(i) s0 (connections_x[i - 1],
+				cordic_stage  s0 (connections_x[i - 1],
 							connections_y[i - 1],
 							connections_z[i - 1],
 							connections_mode[i - 1],
 							reset,
 							clock,
+							connections_stage[i - 1],
 							connections_x[i], 
 							connections_y[i],
 							connections_z[i],
-							connections_mode[i]);
+							connections_mode[i],
+							connections_stage[i]);
 			end
 		endgenerate
 		

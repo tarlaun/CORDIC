@@ -1,37 +1,39 @@
-module cordic_stage    	#( parameter stage)
-			(input [15:0] x,
+module cordic_stage 	(input [15:0] x,
 			input [15:0] y,
 			input [15:0]z,
 			input mode,
 			input reset,
 			input clock,
+			input [2:0] stage,
 			output reg [15:0] x_out,
 			output reg [15:0] y_out,
 			output reg [15:0] z_out,
-			output reg mode_out);
+			output reg mode_out,
+			output [2:0] stage_out);
 
 		`define rotate 0
 		`define phase_calc 1
 		`define PI 16'b0_0000011_00100100
 		`define PI15 15'b0000011_00100100
 		reg [15:0] atan;
-		always @*
-		begin
-			$display("x = %b \n xo = %b \n y = %b \n yo = %b \n z = %b \n zo = %b \n", x,x_out,y,y_out,z,z_out);
-		end
+		assign stage_out = stage + 1;
+		//always @*
+		//begin
+		//	$display("x = %b \n xo = %b \n y = %b \n yo = %b \n z = %b \n zo = %b \n", x,x_out,y,y_out,z,z_out);
+		//end
 		always @(posedge clock or negedge reset)
 		begin
 			if (~reset)
 			begin
 				case (stage) 
-					0 : atan <= 16'b0_0000000_11001001;
-					1 : atan <= 16'b0_0000000_01110110;
-					2 : atan <= 16'b0_0000000_00111110;
-					3 : atan <= 16'b0_0000000_00011111;
-					4 : atan <= 16'b0_0000000_00001111;
-					5 : atan <= 16'b0_0000000_00000111;
-					6 : atan <= 16'b0_0000000_00000011;
-					7 : atan <= 16'b0_0000000_00000001;
+					3'b000 : atan <= 16'b0_0000000_11001001;
+					3'b001 : atan <= 16'b0_0000000_01110110;
+					3'b010 : atan <= 16'b0_0000000_00111110;
+					3'b011 : atan <= 16'b0_0000000_00011111;
+					3'b100 : atan <= 16'b0_0000000_00001111;
+					3'b101 : atan <= 16'b0_0000000_00000111;
+					3'b110 : atan <= 16'b0_0000000_00000011;
+					3'b111 : atan <= 16'b0_0000000_00000001;
 					default : atan <= 0;
 				endcase
 				x_out <= 0;
