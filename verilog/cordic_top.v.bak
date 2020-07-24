@@ -114,7 +114,7 @@ module cordic 	(input op_mode,
 		end
 		wire [2:0] gnd;
 		assign gnd = 0;
-		cordic_stage #(0) s0 (x_in, y_in, z_in, mode_in, reset, clock, gnd,
+		cordic_stage s0 (x_in, y_in, z_in, mode_in, reset, clock, gnd,
 				 connections_x[0], connections_y[0], connections_z[0], connections_mode[0], connections_stage[0]);
 		genvar i;
 		generate
