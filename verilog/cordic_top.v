@@ -52,6 +52,18 @@ module cordic 	(input op_mode,
 			else
 			begin
 				mode_in <= op_mode;
+				if (connections_mode[7] == 0)
+				begin
+					//output transfer
+					x_or_phase_out <= {outx[15], divx};
+					y_or_size_out <= {outy[15], divy};
+				end
+				else
+				begin
+					//output transfer
+					y_or_size_out <= {outx[15], divx};
+					x_or_phase_out <= outz;
+				end
 				if(op_mode == `rotate)
 				begin
 					//input transfer
@@ -77,9 +89,7 @@ module cordic 	(input op_mode,
 							z_in <= rotate_amount - (`PI>>1);
 						end
 					end
-					//output transfer
-					x_or_phase_out <= {outx[15], divx};
-					y_or_size_out <= {outy[15], divy};
+					
 				end
 				else
 				begin
@@ -106,9 +116,6 @@ module cordic 	(input op_mode,
 							z_in <= 16'b1_0000001_10010010; //-PI/2
 						end
 					end
-					//output transfer
-					y_or_size_out <= {outx[15], divx};
-					x_or_phase_out <= outz;
 				end
 			end
 		end
