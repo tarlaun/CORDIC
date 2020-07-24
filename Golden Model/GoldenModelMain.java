@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 
-public class Test {
+public class GoldenModelMain {
 
     static double pi =3.14159265359;
     static double[] arcTan = {0.7854, 0.4636, 0.245, 0.1244, 0.0624, 0.0312, 0.0156, 0.0078, 0.0039, 0.002, 0.001 , 0.0005 , 0.0002 };
@@ -12,11 +12,9 @@ public class Test {
     public static void main(String[] args)  {
     try {
       File testFile = new File("test_input.txt");
-      File modeFile = new File("test_mode.txt");
       FileWriter writer = new FileWriter("test_result_golden_model.txt", false);
       BufferedWriter bufferedWriter = new BufferedWriter(writer);
       Scanner testScanner = new Scanner(testFile);
-      Scanner modeScanner = new Scanner(modeFile);
       String x , y , theta , result;
       for (int i = 0; i < 100; i++) {
           String mode = testScanner.nextLine();
@@ -30,7 +28,6 @@ public class Test {
           bufferedWriter.write(result);
           bufferedWriter.newLine();
       }
-      modeScanner.close();
       testScanner.close();
       bufferedWriter.close();
     } catch (Exception e) {
