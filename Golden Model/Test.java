@@ -18,11 +18,12 @@ public class Test {
       Scanner testScanner = new Scanner(testFile);
       Scanner modeScanner = new Scanner(modeFile);
       String x , y , theta , result;
-      for (int i = 0; i < 8; i++) {
+      for (int i = 0; i < 100; i++) {
+          String mode = testScanner.nextLine();
           x = testScanner.nextLine();
           y = testScanner.nextLine();
-          if(modeScanner.nextLine().equals("0")){
-            theta = testScanner.nextLine();
+          theta = testScanner.nextLine();
+          if(mode.equals("0")){
             result =  rotate(x, y, theta);
           }else
             result =  phaseDetector(x, y);

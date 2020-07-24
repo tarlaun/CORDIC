@@ -14,14 +14,22 @@ public class TestGenerator {
             FileWriter writer = new FileWriter("test_input.txt", false);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             for (int i = 0; i < n; i++) {
-                int random_int = random.nextInt()% 65536;
-                int random_int2 = random.nextInt() % 65536;
-                int random_int3 = random.nextInt() % 804;
+                int random_int = random.nextInt()% 16383;
+                int random_int2 = random.nextInt() % 16383;
+                int random_int3 = random.nextInt() % 800;
 
                 random_int = random_int < 0 ? -random_int : random_int;
                 random_int2 = random_int2 < 0 ? -random_int2 : random_int2;
                 random_int3 = random_int3 < 0 ? -random_int3 : random_int3;
 
+                if(random.nextInt()%3 == 0)
+                    random_int += (int)Math.pow(2,15);
+                if(random.nextInt()%3 == 0)
+                    random_int2 += (int)Math.pow(2,15);
+                if(random.nextInt()%3 == 0)
+                    random_int3 += (int)Math.pow(2,15);
+                bufferedWriter.write((int)Math.abs(random.nextInt()%2) + "");
+                bufferedWriter.newLine();
                 bufferedWriter.write(getStringFromInt(random_int));
                 bufferedWriter.newLine();
                 bufferedWriter.write(getStringFromInt(random_int2));

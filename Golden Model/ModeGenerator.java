@@ -16,7 +16,7 @@ class ModeGenerator{
                 int random_int = random.nextInt()% 2;
                 if(random_int < 0)
                     random_int *= -1;
-                bufferedWriter.write(random_int + "");
+                bufferedWriter.write(0+ "");
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();
