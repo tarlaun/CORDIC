@@ -3,7 +3,10 @@ module testbench2;
 
 reg [15:0] x , y , z , counter , writeCounter;
 wire [15:0] res1;
-wire [15:0] res2; 
+wire [15:0] res2;
+wire  [127:0] stageX;
+wire [127:0] stageY;
+wire [127:0] stageZ; 
 
 integer status, fd ,  fw;
 
@@ -16,7 +19,7 @@ assign mode2 = ~mode;
 assign mode3 = ~mode2;
 
 
-cordic c(mode3 , x, y , z , clk , reset , res1 , res2);
+cordic c(mode3 , x, y , z , clk , reset , res1 , res2 ,stageX ,stageY , stageZ);
 
 initial
 	forever

@@ -1,0 +1,165 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Lenovo/Desktop/dsdProject/CORDIC/verilog
+T_opt
+!s110 1595924171
+VNT^i=iINz=H^22H4RfXSg1
+04 9 4 work testbench fast 0
+=1-54e1adaf279e-5f1fdeca-394-3f28
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.5;63
+T_opt1
+!s110 1595923477
+VmU]B78daEOY=1N55g4ca80
+04 10 4 work testbench2 fast 0
+=1-54e1adaf279e-5f1fdc15-1b7-465c
+R1
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1595923186
+VhEocA_JY==cNO;0gJYTbQ3
+04 10 4 work testbench3 fast 0
+=1-54e1adaf279e-5f1fdaf2-147-3314
+R1
+R2
+n@_opt2
+R3
+R0
+vcordic
+Z4 !s110 1595923327
+!i10b 1
+!s100 eg_O9e`c_0Zg27d>E0LGh0
+I86LadCGc[32=o:_95UBN43
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2
+w1595923173
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_top.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_top.v
+L0 1
+Z7 OL;L;10.5;63
+r1
+!s85 0
+31
+Z8 !s108 1595923327.000000
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_top.v|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vcordic_stage
+R4
+!i10b 1
+!s100 dTkIKe8ZQC:a2oQ<G2i553
+Ij=ii::ZOC@ObQ8J]3j5mG2
+R5
+R6
+w1595921228
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_stage.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_stage.v
+L0 1
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/cordic_stage.v|
+!i113 0
+R9
+R2
+vtestbench
+!s110 1595924157
+!i10b 1
+!s100 >Oj_1N`eAcXMKSJV97ehz0
+IRWnjn@E@z<j8]8S1Z_bnB0
+R5
+R6
+w1595924149
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1595924156.000000
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench.v|
+!i113 0
+R9
+R2
+vtestbench2
+!s110 1595923471
+!i10b 1
+!s100 3_B`YG]0CD6:KGmeXbCNh1
+IS_jJ?Ug=8e@ZKDQj:ZVV50
+R5
+R6
+w1595923460
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench2.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench2.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1595923471.000000
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench2.v|
+!i113 0
+R9
+R2
+vtestbench3
+Z10 !s110 1595923328
+!i10b 1
+!s100 Qmmcc7L<UV0ifcSZj:D0j1
+IhoOINW0IY37Yib0>19FbA1
+R5
+R6
+w1595922541
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench3.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench3.v
+L0 1
+R7
+r1
+!s85 0
+31
+Z11 !s108 1595923328.000000
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench3.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench3.v|
+!i113 0
+R9
+R2
+vtestbench4
+R10
+!i10b 1
+!s100 H:[FI7A]lGi;>;m_ZoG:T3
+I0<2MMWE?Dj^=0V2@XA^W40
+R5
+R6
+w1595922397
+8C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench4.v
+FC:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench4.v
+L0 1
+R7
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench4.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Lenovo/Desktop/dsdProject/CORDIC/Verilog2/testbench4.v|
+!i113 0
+R9
+R2
