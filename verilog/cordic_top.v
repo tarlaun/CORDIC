@@ -5,10 +5,7 @@ module cordic 	(input op_mode,
 		input clock,
 		input reset,
 		output reg [15:0] x_or_phase_out,
-		output reg [15:0] y_or_size_out,
-		output wire [127:0] stageX,
-		output wire [127:0] stageY,
-		output wire [127:0] stageZ
+		output reg [15:0] y_or_size_out
 		);
 		// Every number is in the fixed point format of {sign bit:7 integer bits:8 fractional bits}
 
@@ -35,6 +32,10 @@ module cordic 	(input op_mode,
 		wire [14:0] divx;
 		wire [14:0] divy;
 		wire [32:0] holdery;
+		
+
+		
+		
 		assign outx = connections_x[7];
 		assign outy = connections_y[7];
 		assign outz = connections_z[7];

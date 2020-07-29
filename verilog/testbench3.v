@@ -5,9 +5,6 @@ module testbench3;
 reg [15:0] x , y , z;
 wire [15:0] res1;
 wire [15:0] res2; 
-wire  [127:0] stageX;
-wire [127:0] stageY;
-wire [127:0] stageZ;
 reg mode;
 reg reset = 1;
 reg clk = 1'b0;
@@ -19,7 +16,7 @@ begin
 end
 
 
-cordic c1( mode, x, y, z, clk, reset, res1, res2 , stageX , stageY , stageZ);
+cordic c1( mode, x, y, z, clk, reset, res1, res2 );
 
 initial
 begin

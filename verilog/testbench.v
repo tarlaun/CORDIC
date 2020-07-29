@@ -1,7 +1,7 @@
 module testbench;
 
 
-reg [15:0] x , y , z , counter , cData;
+reg [15:0] x , y , z ;
 wire [15:0] res1;
 wire [15:0] res2; 
 reg mode;
@@ -12,7 +12,7 @@ reg clk = 1'b0;
 initial
 begin
       forever
-        #10 clk = !clk;
+        #5 clk = !clk;
 end
 
 
@@ -21,7 +21,7 @@ cordic c1( mode, x, y, z, clk, reset, res1, res2);
 initial
 begin
 	reset = 0;
-	#10;
+	#5;
 	reset = 1;
 	start = 1;
 end
@@ -29,17 +29,21 @@ end
 
  
 initial begin
-	x <= 16'b1001_1001_1001_0100; //-25.578125  // fail //fail
-	y <= 16'b1001_1110_1100_0001; //-30.75390625
-	z <= 16'b0000_0001_1101_1111; //1.87109375
+	#5
+	x <= 16'b1001_1001_1001_0100; 
+	y <= 16'b1001_1110_1100_0001; 
+	z <= 16'b0000_0001_1101_1111; 
 	mode <= 1;
-	#20
-	x <= 16'b1001_1001_1001_0100; //-25.578125  // fail //fail
-	y <= 16'b1001_1110_1100_0001; //-30.75390625
-	z <= 16'b0000_0001_1101_1111; //1.87109375
+	#10
+	x <= 16'b1001_1001_1001_0100; 
+	y <= 16'b1001_1110_1100_0001; 
+	z <= 16'b0000_0001_1101_1111; 
 	mode <= 0;
 
 end  
+
+initial 
+$monitor ( $time , " res1=%h res2=%h " , res1,res2);
 
  
 
