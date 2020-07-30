@@ -6,7 +6,6 @@ wire [15:0] res1;
 wire [15:0] res2; 
 reg mode;
 reg reset = 1;
-reg start = 0; 
 reg clk = 1'b0;
    
 initial
@@ -23,7 +22,6 @@ begin
 	reset = 0;
 	#5;
 	reset = 1;
-	start = 1;
 end
 
 

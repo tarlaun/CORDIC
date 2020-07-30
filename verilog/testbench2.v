@@ -1,7 +1,7 @@
 module testbench2;
 
 
-reg [15:0] x , y , z , counter , writeCounter;
+reg [15:0] x , y , z , counter;
 wire [15:0] res1;
 wire [15:0] res2;
  
@@ -30,7 +30,6 @@ initial begin
 	#7;
 	reset <= 1;
 	counter <= 0;
-	writeCounter <= 0;
 end
 
  initial begin
@@ -41,7 +40,6 @@ end
 initial 
 $monitor($time, " res1 = %b res2 = %b",  res1 , res2); 
 
-reg temp = 0;
 
 always @(posedge clk)
 begin 
